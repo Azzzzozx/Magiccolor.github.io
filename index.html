@@ -3,53 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brawl Stars Color Text</title>
+<title>Color Text Generator</title>
 <style>
-    .colorBox {
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .input-container {
         margin-bottom: 20px;
     }
-    .colorBox textarea {
+    textarea {
         width: 300px;
         height: 100px;
-        padding: 10px;
-        border: 1px solid #ccc;
         font-size: 16px;
+        padding: 10px;
+    }
+    select {
+        font-size: 16px;
+        padding: 5px;
+    }
+    button {
+        font-size: 16px;
+        padding: 8px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    .output {
+        margin-top: 20px;
+        font-size: 20px;
     }
 </style>
 </head>
 <body>
-<div class="colorBox">
-    <textarea id="colorText1" placeholder="اكتب هنا..."></textarea>
-    <br>
-    <select id="colorPicker1">
-        <!-- تم استبدال الألوان هنا بأرقام لسهولة الاستخدام -->
-        <option value="#ff2a00">1</option>
-        <option value="#ff5400">2</option>
-        <option value="#ff7f00">3</option>
-        <!-- يمكنك إضافة المزيد من الخيارات هنا -->
-    </select>
-    <button onclick="changeColor('colorText1', 'colorPicker1')">تحويل النص</button>
-</div>
-
-<div class="colorBox">
-    <textarea id="colorText2" placeholder="اكتب هنا..."></textarea>
-    <br>
-    <select id="colorPicker2">
-        <!-- تم استبدال الألوان هنا بأرقام لسهولة الاستخدام -->
-        <option value="#ff2a00">1</option>
-        <option value="#ff5400">2</option>
-        <option value="#ff7f00">3</option>
-        <!-- يمكنك إضافة المزيد من الخيارات هنا -->
-    </select>
-    <button onclick="changeColor('colorText2', 'colorPicker2')">تحويل النص</button>
+<div class="container">
+    <div class="input-container">
+        <textarea id="inputText" placeholder="اكتب هنا..."></textarea>
+        <br>
+        <select id="colorPicker">
+            <option value="#ff2a00">أحمر داكن</option>
+            <option value="#ff5400">برتقالي داكن</option>
+            <option value="#ff7f00">بني داكن</option>
+            <!-- أضف المزيد من الألوان هنا -->
+        </select>
+        <br>
+        <button onclick="changeColor()">تحويل النص</button>
+    </div>
+    <div class="output" id="outputText"></div>
 </div>
 
 <script>
-    function changeColor(textId, pickerId) {
-        var textColor = document.getElementById(pickerId).value;
-        var text = document.getElementById(textId).value;
-        document.getElementById(textId).style.color = textColor;
-        document.getElementById(textId).value = text;
+    function changeColor() {
+        var textColor = document.getElementById("colorPicker").value;
+        var text = document.getElementById("inputText").value;
+        document.getElementById("outputText").style.color = textColor;
+        document.getElementById("outputText").innerText = text;
     }
 </script>
 </body>
