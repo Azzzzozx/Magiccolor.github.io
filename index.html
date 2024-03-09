@@ -4,26 +4,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brawl Stars Color Text</title>
+<style>
+    #colorText {
+        width: 300px;
+        height: 100px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+</style>
 </head>
 <body>
-<p style="color:#ff2a00;">أحمر داكن</p>
-<p style="color:#ff5400;">برتقالي داكن</p>
-<p style="color:#ff7f00;">بني داكن</p>
-<p style="color:#ffa900;">أصفر داكن</p>
-<p style="color:#ffd400;">ليموني داكن</p>
-<p style="color:#fefe00;">أخضر داكن</p>
-<p style="color:#d4ff00;">فاتح</p>
-<p style="color:#aaff00;">بني فاتح</p>
-<p style="color:#7fff00;">ليموني قاتم</p>
-<p style="color:#55ff00;">بنفسجي فاتح</p>
-<p style="color:#2aff00;">بنفسجي داكن</p>
-<p style="color:#04fe00;">زيتوني داكن</p>
-<p style="color:#ff003f;">أزرق قاتم</p>
-<p style="color:#ff007f;">أزرق داكن</p>
-<p style="color:#ff00bf;">أزرق فاتح</p>
-<p style="color:#ff00ff;">زهري داكن</p>
-<p style="color:#bf00ff;">زهري فاتح</p>
-<p style="color:#7f00ff;">بنفسجي قاتم</p>
-<p style="color:#5f0fff;">زيتوني فاتح</p>
+<div>
+    <textarea id="colorText" placeholder="اكتب هنا..."></textarea>
+    <br>
+    <select id="colorPicker">
+        <option value="#ff2a00">أحمر داكن</option>
+        <option value="#ff5400">برتقالي داكن</option>
+        <option value="#ff7f00">بني داكن</option>
+        <option value="#ffa900">أصفر داكن</option>
+        <option value="#ffd400">ليموني داكن</option>
+        <option value="#fefe00">أخضر داكن</option>
+        <option value="#d4ff00">فاتح</option>
+        <option value="#aaff00">بني فاتح</option>
+        <option value="#7fff00">ليموني قاتم</option>
+        <option value="#55ff00">بنفسجي فاتح</option>
+        <option value="#2aff00">بنفسجي داكن</option>
+        <option value="#04fe00">زيتوني داكن</option>
+        <option value="#ff003f">أزرق قاتم</option>
+        <option value="#ff007f">أزرق داكن</option>
+        <option value="#ff00bf">أزرق فاتح</option>
+        <option value="#ff00ff">زهري داكن</option>
+        <option value="#bf00ff">زهري فاتح</option>
+        <option value="#7f00ff">بنفسجي قاتم</option>
+        <option value="#5f0fff">زيتوني فاتح</option>
+        <!-- يمكنك إضافة المزيد من الألوان هنا -->
+    </select>
+    <button onclick="changeColor()">تحويل النص</button>
+</div>
+
+<script>
+    function changeColor() {
+        var textColor = document.getElementById("colorPicker").value;
+        var text = document.getElementById("colorText").value;
+        document.getElementById("colorText").style.color = textColor;
+        document.getElementById("colorText").value = text;
+    }
+</script>
 </body>
 </html>
